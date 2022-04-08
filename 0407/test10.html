@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test10.html</title>
+    <script>
+        'use strict'
+        function fCheck()  {
+            // let mid = document.myForm.mid.value; //DOM객체에 접근하기
+            // let pwd = document.myForm.pwd.value;
+            let mid = document.getElementById("mid").value; //프론트에선 아이디로 접근해서 값 가져옴
+            let pwd = document.getElementById("pwd").value;
+            
+            if(mid == "") {
+                alert("아이디를 입력하세요.");
+                document.getElementById("mid").focus();
+                // document.myForm.mid.focus();
+            }
+            else if(pwd == "") {
+                alert("비밀번호를 입력하세요.");
+                // document.myForm.pwd.focus();
+                document.getElementById("pwd").focus();
+            }else {
+                alert("아이디는? " + mid + "\n비밀번호는? " + pwd);
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- <form name="myForm" method="post" action="#">  -->
+        <p>
+            <label for="mid">아이디</label> : 
+            <input type="text" name="mid" id="mid"/></p>
+        <p><label for="pwd">비밀번호</label> : 
+            <input type="password" name="pwd" id="pwd" size="3" maxlength="6"/></p>       <p>
+            <input type="submit" value="전송"/>
+            <input type="reset" value="취소"/>
+            <input type="button" value="확인" onclick="fCheck()"/>
+        </p>
+    </form>
+</body>
+</html>

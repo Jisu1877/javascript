@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test13.html</title>
+    <script>
+        'use strict'
+        function fCheck() {
+            let gender;
+            if(document.getElementsByName("gender")[0].checked) {
+                gender = "남자";
+            }
+            else if(document.getElementsByName("gender")[1].checked){
+                gender = "여자";
+            }
+            else {
+                gender = "성별을 선택하세요.";
+            }
+            demo.innerHTML = "<br/>성별 : <font color='red'>"+gender+"</font> <input type ='button' value='가리기' onclick='fClose()'/>";
+        }
+        function fClose() {
+            demo.innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <h2>라디어버튼값 체크하기</h2>
+    <form>
+        <div>
+            <input type="radio" name="gender" id="gender" value="남자" checked />남자
+            <input type="radio" name="gender" id="gender2" value="여자" />여자 &nbsp;&nbsp;
+            <input type="button" value="값체크" onclick="fCheck()"/>
+        </div>
+        <div id="demo"></div>
+        <h2>나는 가상 아래 있습니다.</h2>
+    </form>
+</body>
+</html>

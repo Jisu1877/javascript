@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test1.html(Javascript개요)</title>
+    <!--
+        자바스크립트 주석 == 자바주속
+        //한줄 주석
+        /*여러줄 주석*/
+    -->
+    <script> 
+        console.log("Hello1!!!"); 
+        console.log("Hello2!!!"); 
+        // console.log("Hello3!!!"); 
+        console.log("Hello4!!"); //clg
+        console.clear(); //ccl
+        console.log("Hello5!!");
+        document.write("1.이곳은 자바스크립트입니다.<br/>");
+        document.write("2.이곳은 자바스크립트입니다.<br/>");
+        
+        function atom() {
+            document.write("3.이곳은 자바스크립트입니다.<br/>");
+        }
+    </script>
+</head>
+<body>
+    <h2>Javascript연습</h2>
+    <input type="button" value="확인" onclick="atom()"/> <!--함수를 이용해서 호출하는 방법-->
+    <input type="button" value="확인2" onclick="atom2()"/> <!--함수를 이용해서 호출하는 방법-->
+    <script>
+    function atom2() {
+        document.write("4.이곳은 자바스크립트입니다.<br/>");
+    }
+    </script>
+</body>
+</html>

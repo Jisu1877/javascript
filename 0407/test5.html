@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test5.html</title>
+    <script>
+        su1 = 100;  //변수타입을 선언하지 않아도 된다.(에크마5)
+        var su2 = 200; //어떤 것이라도 var 타입 쓰면 모든 타입 수용(에크마5)
+        var su3 = "seoul";
+        var su4 = 'busan'; //작은 따옴표도 가능하다.
+
+        {
+            var su5 = 500;
+            console.log("1.su5 : " + su5);
+        }
+        console.log("2.su5 : " + su5); //{}를 벗어나도 변수의 값이 유지된다..(에크마5)
+
+        console.log("su1 : " + su1);
+        console.log("su1(type) : " + typeof(su1));
+        console.log("su2 : " + su2);
+        console.log("su2(type) : " + typeof(su2));
+        console.log("su3 : " + su3);
+        console.log("su3(type) : " + typeof(su3));
+        console.log("su4 : " + su4);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test5.html</title>
+    <script>
+        'use strict'; //에크마6에서 추가된 명령어. 에크마6를 따라가겠다고 선언하는 것. 
+        // su1 = 100;  //변수타입을 선언하지 않으면 안된다.(에크마6)
+        let su1 = 100;
+        // let su2 = 200; //어떤 것이라도 var 타입 쓰면 모든 타입 수용(에크마5) -> 이 내용을 에크마6도 수용.
+        const su2 = 200; //const는 값을 바꿀수 없도록 고정상수로 만들어준다.(에크마6에서 추가됨)
+        let su3 = "seoul";
+        let su4 = 'busan'; //작은 따옴표도 가능하다.
+
+        
+        {
+            let su5 = 500;
+            console.log("1.su5 : " + su5);
+        }
+        // console.log("2.su5 : " + su5); //let로 변수를 {}안에서 선언했을때 {}를 벗어나면 변수는 리셋된다.(에크마6)
+
+        console.log("su1 : " + su1);
+        console.log("su1(type) : " + typeof(su1));
+        console.log("su2 : " + su2);
+        console.log("su2(type) : " + typeof(su2));
+        console.log("su1(type) : " + typeof(su1));
+        // su2 = 20000; //
+        // console.log("su2 : " + su2);
+        
+
+        console.log("su3 : " + su3);
+        console.log("su3(type) : " + typeof(su3));
+        console.log("su4 : " + su4);
+        
+        console.log("1.su6 : " + su6); //변수선언 전에 사용하겠다.. var 로 선언한경우 에러안남.
+        var su6 = 600; //호이스팅(var hoisting) : 변수선언의 위치와 관계없이 사용하도록 하겠다.
+        // let su6 = 600;  // let으로 선언하면 에러남.
+        console.log(`2.su6 : ${su6}`); // ` : 백틱(backtic) 으로 감싸면 안에 변수를 쓸수 있다.
+        
+    </script>
+</head>
+<body>
+    <h2>이곳은 test5입니다.</h2>
+</body>
+</html>
