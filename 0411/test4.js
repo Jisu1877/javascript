@@ -9,7 +9,7 @@ const today = new Date();
     const yymmdd = year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
 
 function dateBring() {
-    const today2 = new Date();
+    const today = new Date();
     const year = today.getFullYear();
     const month = today.getMonth() + 1;
     const date = today.getDate();

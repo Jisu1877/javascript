@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test9.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="test4.js"></script>
+    <script>
+        'use strict';
+        let timeCheck;
+
+        alert(new Date('2022-04-12 00:00:00', 'yyyy-mm-dd hh:mm:ss'));
+        function clock(sel) {
+            let today = new Date();
+            let hh = today.getHours();
+            let mm = today.getMinutes();
+            let ss = today.getSeconds();
+
+            if(hh < 10) {
+                hh = '0' + hh;
+            }
+            if(mm < 10) {
+                mm = '0' + mm;
+            }
+            if(ss < 10) {
+                ss = '0' + ss;
+            }
+
+            hh = hh + "";
+            mm = mm + "";
+            ss = ss + "";
+            let h1 = hh.slice(0,1);
+            let h2 = hh.slice(1,2);
+            let m1 = mm.slice(0,1);
+            let m2 = mm.slice(1,2);
+            let s1 = ss.slice(0,1);
+            let s2 = ss.slice(1,2);
+            // console.log(h2);
+
+            // document.getElementById("demo").innerHTML = "<h2>" + hh + " : "+mm+" : " + ss + "</h2>";
+            for(let i=0; i<10; i++) {
+                if(h1 == i) {
+                    h1 = "<img src='../../images/"+i+".gif'/>";
+                }
+                if(h2 == i) {
+                    h2 = "<img src='../../images/"+i+".gif'/>";
+                }
+                if(m1 == i) {
+                    m1 = "<img src='../../images/"+i+".gif'/>";
+                }
+                if(m2 == i) {
+                    m2 = "<img src='../../images/"+i+".gif'/>";
+                }
+                if(s1 == i) {
+                    s1 = "<img src='../../images/"+i+".gif'/>";
+                }
+                if(s2 == i) {
+                    s2 = "<img src='../../images/"+i+".gif'/>";
+                }
+            }
+            document.getElementById("demo").innerHTML = h1 + h2 + " : " + m1 + m2 + " : " + s1 + s2;
+        }   
+        function start() {
+            clock();
+            timeCheck = setInterval( clock , 1000);
+        }
+
+        function stop() {
+            clearInterval(timeCheck)
+        }
+    </script>
+</head>
+<body>
+    <p><br/></p>
+    <div class="container">
+        <h2>인터넷 시계</h2>
+        <div>
+            <input type="button" value="시작" onclick="start()"/>
+            <input type="button" value="정지" onclick="stop()"/>
+        </div>
+        <br/>
+        <div id="demo"></div>
+    </div>
+</body>
+</html>

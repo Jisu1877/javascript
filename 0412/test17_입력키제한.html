@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test17.html</title>
+    <script>
+        window.addEventListener("keydown", function (event) {
+        if (event.defaultPrevented) {
+            return;
+        }
+
+        var handled = false;
+
+        // 숫자(0 ~ 9) 입력 제한
+        if (event.keyCode >= 48 && event.keyCode <= 57)
+            handled = true;
+
+        // 백스페이스(backspace) 입력 제한
+        else if (event.keyCode == 8)
+            handled = true;
+
+        // 시프트(shift) 입력 제한
+        else if(event.keyCode == 16)
+            handled = true;
+
+        // 알트(alt) 입력 제한 (keycode 값인 18로 사용 가능)
+        else if(event.altKey)
+            handled = true;
+
+        // 컨트롤(ctrl) 입력 제한 (keyCode 값인 17로 사용 가능)
+        else if(event.ctrlKey)
+            handled = true;
+
+        // 방향키(←:37, →:39, ↑:38, ↓:40)
+        else if(event.keyCode >= 37 && event.keyCode <= 40)
+            handled = true;
+
+        if (handled) {
+            console.log(event.keyCode);
+            alert("방향키/Shift/Alt/Ctrl/Backspace/숫자키는 사용할 수 없습니다.")
+
+            event.preventDefault();
+        }
+        else {
+            document.getElementById("demo").innerHTML = event.keyCode;
+        }
+        }, true);
+    </script>
+    </head>
+    <body>
+    <h2>키보드 키값 확인</h2>
+    <p>키보드를 누르면 키값이 표시됩니다.</p>
+    <p><input type="button" value="새로고침" onclick="location.reload"/></p>
+    <div id="demo"></div>
+</body>
+</html> 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test10.html</title>
+    <script>
+        function fCheck() {
+            alert("안녕하세요... 환영합니다.");
+        }
+
+        function fCheckOut() {
+            alert("다음에 또 만나요~~~");
+        }
+    </script>
+</head>
+<body onload="fCheck()" onunload="fCheckOut()">  <!--onunload는 브라우저에서 지원하지 않는다.-->
+    <h2>onLoad(시작할때 수행)/onUnLoad(끝날때수행) 이벤트</h2> <!--공지사항 띄울때 onLoad 사용 -->
+    <input type="button" value="호출1" onclick="fCheck()"/>
+    <input type="button" value="호출2" onclick="fCheckOut()"/>
+</body>
+</html>

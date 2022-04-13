@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test15.html</title>
+    <script>
+        //클릭시에 배경변경
+        function mClick() {
+            document.getElementById("demo").style.backgroundColor = "#f00";
+            document.getElementById("demo").style.color = "#fff";
+        }
+        //더클클릭시에 배경변경
+        function mDblClick() {
+            document.getElementById("demo").style.backgroundColor = "#0ff";
+            document.getElementById("demo").style.color = "#000";
+        }
+
+        function mDown(evt) {
+            let str = "";
+            let x = evt.screenX; //이벤트가 발생한 스크린의 x좌표..
+            let y = evt.screenY;
+
+            str += "X좌표 : "+x+"<br/>";
+            str += "Y좌표 : "+y+"<br/>";
+            str += "발생된이벤트 : " + evt.type;
+            document.getElementById("demo2").innerHTML = str;
+
+        }
+
+        document.onclick = mClick; //리스너의 경우 왼쪽 내용을 오른쪽에 담는다. 마우스 클릭되면 mClick 호출.
+        document.ondblclick = mDblClick;
+        document.onmousedown = mDown;
+    </script>
+    <style>
+        #demo {
+            background-color: #0ff;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>마우스 위치 확인</h2>
+    <p id="demo">마우스를 클릭 또는 더블클릭하시면 속성이 변경됩니다.</p>
+    <div id="demo2"></div>
+</body>
+</html>

@@ -43,12 +43,13 @@
 
                 let na = hap % 11;
                 let checkDigit;
-                if(na < 10) {
-                    checkDigit = 11 - na;
+
+                checkDigit = 11 - na;
+
+                if(checkDigit > 9) {
+                    checkDigit = checkDigit % 10;
                 }
-                else {
-                    checkDigit = 11 - na - 10;
-                }
+                
                 if(checkDigit == jumin.substring(jumin.length-1)) {
                     res += "주민번호가 일치합니다.";
                 }

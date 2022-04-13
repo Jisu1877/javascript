@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test6.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="test4.js"></script>
+    <script>
+        'use strict';
+
+        function fCheck() {
+            let food = myForm.food.value;
+            let foodLen = myForm.food.length;
+            let strFood = "";
+            // console.log(foodLen);
+            if(food == "") {
+                alert("음식을 선택하세요");
+            }
+            else {
+                for(let i=0; i<foodLen; i++) {
+                    if(myForm.food.options[i].selected)  { //food안에 option이 복수개로 있기 때문에 onptions[] 로 선택되었나 확인.
+                        strFood += myForm.food[i].value + " / "; //주의! 값 가져올 때는 select의 name 인 food 로 접근.
+                    }
+                }
+                strFood = strFood.substring(0,strFood.length-3);  // 마지막 '/' 제거하기.
+                document.getElementById("demo").innerHTML = "<font color='red'>"+strFood+"</font> 가 선택되었습니다."
+            }
+        }
+    </script>
+</head>
+<body>
+    <p><br/></p>
+    <div class="container">
+        <form name="myForm">
+            <div class="form-group">
+                <h2>리스트박스</h2>
+            </div>
+            <div class="form-group m-3">
+                <label for="season">좋아하는 음식은?</label>
+                <select name="food" id="food" size="5" multiple class="form-control m-2"> <!--size 는 화면에 보여주고 싶은만큼의 개수-->
+                    <option value="탕수육">탕수육</option>
+                    <option value="삼겹살">삼겹살</option>
+                    <option value="피자">피자</option>
+                    <option value="파스타">파스타</option>
+                    <option value="김밥">김밥</option>
+                    <option value="떡볶이">떡볶이</option>
+                    <option value="우동">우동</option>
+                    <option value="돈까스">돈까스</option>
+                    <option value="비빔면">비빔면</option>
+                    <option value="보쌈">보쌈</option>
+                </select>
+                <div class="form-group m-3">
+                    <input type="button" value="선택" onclick="fCheck()" class="btn btn-success form-control m-1"/>
+                    <input type="button" value="취소" onclick="location.reload()" class="btn btn-success form-control m-1"/>
+                </div>
+                <br/>
+                <div id="demo"></div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

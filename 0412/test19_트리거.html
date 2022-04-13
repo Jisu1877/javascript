@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test19.html</title>
+</head>
+<body>
+    <h2>트리거 사용 예</h2>
+    <form name="myForm">
+        <p>
+            <input type="button" value="버튼1" name="btn1" onclick="myForm.btn2.click();"/>
+        </p>
+        <p>
+            <input type="button" value="버튼2" name="btn2" onclick="alert(this.value + ': 버튼2가 눌러졌습니다.');"/>
+        </p>
+    </form>
+</body>
+</html>

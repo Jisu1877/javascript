@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test19_2.html</title>
+    <script>
+        'use strict';
+        let num1 = 0;
+        let num2 = 0;
+
+        function click1() {
+            document.getElementById("demo1").innerHTML = ++num1;
+            if(num1 % 5 == 0) {
+                document.getElementById("btn2").click();
+            }
+        }
+        function click2() {
+            document.getElementById("demo2").innerHTML = ++num2;
+            if(num2 % 10 == 0) {
+                document.getElementById("btn1").click();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>트리거 사용 예</h2>
+    <form name="myForm">
+        <p>
+            <input type="button" value="버튼1" name="btn1" id="btn1" onclick="click1()"/>
+        </p>
+        <p>
+            <input type="button" value="버튼2" name="btn2" id="btn2" onclick="click2()"/>
+        </p>
+    </form>
+    <font color="#00f"><div id="demo1"></div></font>
+    <font color="#f00"><div id="demo2"></div></font>
+    <div id="demo2"></div>
+</body>
+</html>
