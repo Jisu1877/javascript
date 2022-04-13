@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2.html(상품가격계산)</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        'use strict';
+        // jQuery 사용법 : $("선택자").이벤트 혹은 다른 명령(function(매개변수){수행할 내용});
+        // 선택자 : 태그, 아이디, 클래스 선택자..
+        // jQuery(document).ready(function(){});
+        $(document).ready(function(){ // document는 선택자가 아니라 명령어이다. 그래서 ""로 둘러싸지 않음.
+            $("#price").css("color", "red");
+            $("#ea").css("fontSize", "20pt");
+
+            $("#calcBtn").click(function(){
+                // 자바스크립트 형식
+                // let price = document.getElementById("price").value;
+                // let ea = document.getElementById("ea").value;
+                // let res = price * ea;
+                // document.getElementById("demo").innerHTML = res;
+
+                //jQuery 형식
+                // let price = $("#price").val();
+                let price = Number($("#price").val());
+                let ea = Number($("#ea").val());
+
+                if(isNaN(price)) {
+                    alert("금액은 숫자로 입력하세요.");
+                    $("#price").select();
+                    $("#price").focus();
+                }
+
+                let res = price * ea;
+                $("#demo").html(res);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <p><br/></p>
+    <div class="container">
+        <h2>상품 가격 </h2>
+        <p>가격<input type="text" name="price" id="price" value="25000" autofocus/>
+        </p>
+        <p>수량<input type="number" name="ea" id="ea" value="2"/>
+        </p>
+        <p><input type="button" value="계산" id="calcBtn"/></p>
+        <hr/>
+        <div id="demo"></div>
+        <hr/>
+    </div>
+</body>
+</html>

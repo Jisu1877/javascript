@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test8.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        'use strict';
+        $(document).ready(function(){
+            let atom = $('.test').css('color', 'orange'); //배열로 저장됨..
+            console.log(atom);
+
+            // 배열로 저장된 객체를 색인번호로 불러와서 사용해본다.
+            // 자바스크립트로 스타일 적용한 경우
+            let first = atom[0];
+            console.log(first);
+            first.style.color = 'red';
+
+            // jQuery로 스타일 적용한 경우
+            let second = atom[1];
+            console.log(second);
+            $(second).css('color', 'yellow');
+
+            //반복구조(each) : (인덱스, 요소) -> 자바스크립트의 forEach와 비슷.. 자바스크립트에는 each가 없다.
+            atom.each(function(idx, items){
+                console.log(idx);
+                console.log(items);
+                $(items).css('backgroundColor', 'pink');
+            });
+
+            // $("#c").css("color","red").css("backgroundColor","yellow");
+            //위 내용을 하나로 묶는 방법 ↓
+            $("#c").css({"color":"red","backgroundColor":"yellow","fontSize":"20pt"});
+        });
+    </script>
+</head>
+<body>
+    <h2>진달래 꽃</h2>
+    <p>작가 : 김소월</p>
+    <div id="a">1연</div>
+    <div>나보기가 <span class="test">역겨워</span> 가실 때에는</div>
+    <div>말없이 고이보내 드리오리다.</div>
+    <div id="a">2연</div>
+    <div>영변에 약산 진달래 꽃</div>
+    <div class="test main">아름따다 가실길에 뿌리오리다.</div>
+    <div id="a">3연</div>
+    <div>가시는 <span id="c">걸음걸음</span> 놓인 그 꽃을</div>
+    <div>사뿐히 즈려밟고 가시옵소서</div>
+    <div id="a">4연</div>
+    <div>나보기가 <span class="main">역겨워</span> 가실 때에는</div>
+    <div>죽어도 <span class="test">아니<b id="b">눈물</b></span> 흘리오리다.</div>
+    <div><span class="test">작업끝</span>...</div>
+</body>
+</html>

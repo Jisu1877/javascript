@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test5.html</title>
+    <script>
+        'use strict';
+
+        //도형의 면적을 구하는 부모클래스(폭(width), 높이(height))
+        class ShapeArea {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+
+            // 사각형의 면적 메소드
+            getArea() {
+                return this.width * this.height;
+            }
+        }
+        
+        function fCheck() {            
+            class Child extends ShapeArea {}
+            let child = new Child(10, 20);
+            let area = child.getArea();
+            console.log("사각형 면적 : " + area);
+        }
+
+        function fCheck2() {            
+            class Child2 extends ShapeArea {
+                getArea() {
+                    return this.width * this.height / 2;
+                }
+            }
+            let child2 = new Child2(10, 20);
+
+            let area = child2.getArea();
+            console.log("삼각형 면적 : " + area);
+        }
+        
+    </script>
+</head>
+<body>
+    <h2>클래스연습(상속_오버라이딩)</h2>
+    <div>
+        <input type="button" value="클래스호출" onclick="fCheck()"/>
+        <input type="button" value="클래스호출2" onclick="fCheck2()"/>
+    </div>
+</body>
+</html>

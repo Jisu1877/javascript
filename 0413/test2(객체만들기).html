@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2(객체만들기).html</title>
+    <script>
+        'use strict';
+
+        // 클래스만들기(선언)
+        class Member {
+            //필드명
+            name;
+            age;
+
+            //생성자
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            //메소드
+            memberPrint() {
+                console.log("성명 : " + this.name + " /나이 : " + this.age);
+            }
+        }
+
+        function fCheck() {
+            let member = new Member("홍길동", 25);
+            console.log("이름 : " + member.name + "/ 나이 : " + member.age);
+            member.memberPrint();
+        }
+    </script>
+</head>
+<body>
+    <h2>클래스 연습2</h2>
+    <p>
+        <input type="button" value="클래스호출" onclick="fCheck()"/>
+    </p>
+</body>
+</html>

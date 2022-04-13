@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test5.html(상품가격계산)</title>
+    <!-- <script src="../js/jquery-3.6.0.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        'use strict';
+
+        // $를 jQuery로 사용해야만 되도록 선언 / 선언이유 : PHP에서 $를 사용하기 때문에 겹침.
+        $.noConflict(); //jQuery에서 $사용 금지
+
+        // jQuery 사용법 : $("선택자").이벤트 혹은 다른 명령(function(매개변수){수행할 내용});
+        // 선택자 : 태그, 아이디, 클래스 선택자..
+        // jQuery(document).ready(function(){});
+
+        // $(document).ready(function(){ // 윈도우 로딩될때 onload 하는 명령어..
+
+        jQuery(function(){                    // 마치 익명함수처럼..사용.. $가 (document).ready 를 내포함.
+            jQuery("#price").css("color", "red");
+            jQuery("#ea").css("fontSize", "20pt");
+
+            jQuery("#calcBtn").click(function(){
+                jQuery("#price").val();
+                let price = Number(jQuery("#price").val()); //val() 은 값을 가져오기.
+                let ea = Number(jQuery("#ea").val());
+
+                if(isNaN(price)) {
+                    alert("금액은 숫자로 입력하세요.");
+                    jQuery("#price").select();
+                    jQuery("#price").focus();
+                }
+
+                // let res = price * ea;
+                let res = numberWithCommas(price * ea);
+                jQuery("#demo").html(res);
+            });
+
+            jQuery("#demo").css("color", "#00f").css("fontSize", "25pt");
+        });
+
+        function numberWithCommas(num) { 
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+    </script>
+
+</head>
+<body>
+    <p><br/></p>
+    <div class="container">
+        <h2>상품 가격 </h2>
+        <p>가격<input type="text" name="price" id="price" value="25000" autofocus/>
+        </p>
+        <p>수량<input type="number" name="ea" id="ea" value="2"/>
+        </p>
+        <p><input type="button" value="계산" id="calcBtn"/></p>
+        <hr/>
+        <div id="demo"></div>
+        <hr/>
+    </div>
+</body>
+</html>

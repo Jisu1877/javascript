@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test1.html(객체만들기)</title>
+    <!--
+        클래스와 객체의 차이 (좀더 자세히 정리하기!!)
+        클래스 : 설계도
+        객체 : 클래스로 만들어진 복제품(인스터스)
+    -->
+    <script>
+        'use strict';
+
+        // 객체 생성하기 : new 연산자
+        let obj = new Object();
+        // 객체 생성하고 값을 줘도 된다.
+        obj.name = '이기자'; //필드 생성과 값 부여.
+        obj.age = 22;
+        obj.jumsu = [100, 90, 80];
+        obj.infor = {
+            tel : '010-9039-1877',
+            address : '충북 청주시 서원구 사직대로11'
+        };
+        obj.atom = function() {
+            console.log('성명 :' + this.name);
+        };
+
+        console.log("object클래스 :" + obj);
+        console.log("obj.name :" + obj.name);
+        console.log("Jumsu : " + obj.jumsu);
+        console.log("infor : " + obj.infor);
+        console.log("infor.tel : " + obj.infor.tel);
+        console.log("함수1 : " + obj.atom);
+        obj.atom();
+    </script>
+</head>
+<body>
+    <h2>클래스 연습</h2>
+</body>
+</html>

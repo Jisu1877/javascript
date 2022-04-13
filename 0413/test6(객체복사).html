@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test6.html</title>
+    <script>
+        'use strict';
+        
+        const user1 = {name:"홍길동", age:22};   //에크마5에서의 객체생성..
+        const user2 = user1; //객체 복사(얕은복사) -> user1의 주소만 복사됨.
+
+        function fCheck() {
+            console.log("user1 : " + user1.name + " / " + user1.age);
+            console.log("user2 : " + user2.name + " / " + user2.age);
+            console.log(" ");
+            
+            user2.name = "김말숙"; //얕은복사는 use1(원본)에도 영향을 줌.
+            user2.age = 35;
+            
+            console.log("user1 : " + user1.name + " / " + user1.age);
+            console.log("user2 : " + user2.name + " / " + user2.age);
+            console.log(" ");
+            
+            // user1의 '키'만으로 user3에 값을 복사시킨다.(깊은 복사)
+            const user3 = {};
+            for(let key in user1) { //user1에 들어있는 키값만 가져와서 key에 담기..
+                user3[key] = user1[key];
+            }
+            console.log("user3 : " + user3.name + " / " + user3.age);
+            console.log(" ");
+            
+            user3.name = "홍길순"
+            user3.age = 5;
+            console.log("user1 : " + user1.name + " / " + user1.age);
+            console.log("user3 : " + user3.name + " / " + user3.age);
+            console.log(" ");
+
+            
+            const user4 = {};
+            user4.name = "이기자";
+            user4.age = 55;
+            console.log("user4 : " + user4.name + " / " + user4.age);
+            console.log(" ");
+            
+            //객체 복사 메소드 : assign(a,b) : b객체를 a객체로 복사 
+            const user5 = {}
+            Object.assign(user5, user1);
+            console.log("user1 : " + user1.name + " / " + user1.age);
+            console.log("user5 : " + user5.name + " / " + user5.age);
+            console.log(" ");
+            
+            
+            user5.name = "소나무"; //깊은복사는 use1(원본)에도 영향을 안줌.
+            user5.age = 101;
+            
+            console.log("user1 : " + user1.name + " / " + user1.age);
+            console.log("user5 : " + user5.name + " / " + user5.age);
+            
+        }
+        </script>
+</head>
+<body>
+    <h2>클래스연습(객체복사)</h2>
+    <div>
+        <input type="button" value="클래스호출" onclick="fCheck()"/>
+    </div>
+</body>
+</html>
