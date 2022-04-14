@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2_2.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        'use strict';
+
+        $(document).ready(function(){
+            //속성접근 => 태그[속성명="값"](태그생략 가능)
+            $("input[type='text']").css('color','blue');
+            $("input[type='password']").css({'color':'red','border':'1px solid blue'});
+
+            //name으로 접근(태그생략)
+            $("[name='name1']").css('color','orange');
+            // $("input[name='btnTest']").css('color','orange'); //태그 생략 안했을경우.!
+            $("[name='btnTest']").css('color','orange');
+            $("[readonly]").css('color','brown');
+            // $("[btnTest]").css('color','white'); //사용x
+
+            
+            //완전일치(=)
+            $('a[href = "http://www.naver.com"]').css('color','brown');
+
+            //시작일치(^=)
+            $('a[href ^= "http://"]').css('color','pink');
+            
+            //종료일치($=)
+            $('a[href $= "com"]').css('color','black');
+            $('a[href $= "co.kr"]').css('color','blue');
+            
+            //포함(*=)
+            $('input[value *= "자"]').css('backgroundColor','pink');
+            $('a[href *= "https"]').css('backgroundColor','pink');
+
+            //부정(not / !=) //not은 지원하지 않는 브라우저도 있기 때문에 != 을 사용권장.
+            $('input[type != "text"]').css('backgroundColor','gray');
+        });
+    </script>
+</head>
+<body>
+    <p><br/></p>
+    <div class="container">
+        <form>
+            <h2>폼 태그 연습</h2>
+            <br/>
+            <div>
+                <div>
+                    <label for="name">성명</label>
+                    <input type="text" name="name1" id="name1" value="홍길동" readonly/><br/><br/>
+                    <input type="text" name="name2" id="name2" value="김말숙"/><br/><br/>
+                    <input type="text" name="name2" id="name3" value="홍말자"/><br/><br/>
+                    <input type="password" name="pwd" value="1234537545"/><br/><br/>
+                    <input type="button" value="연습" name="btnTest" class="btn btn-success"/>
+                </div>
+            </div>
+            <hr/>
+            <div>
+                <p><a href="https://www.naver.com">네이버</a></p>
+                <p><a href="http://www.daum.net">다음</a></p>
+                <p><a href="https://www.facebook.com">FaceBook</a></p>
+                <p><a href="http://www.kbs.co.kr">kbs방송국</a></p>
+                <p><a href="http://www.imbc.com">mbc방송국</a></p>
+                <p><a href="http://www.sbs.co.kr">sbs방송국</a></p>
+            </div>
+        </form>
+    </div>
+    <p><br/></p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test8.html(slice함수)</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        'use strict';
+        $(document).ready(function(){
+            let varDiv = $('div').css('color','lightgray');
+            console.log(varDiv); //배열로 들어가있다.
+
+            //slice(a,b) : a에서 b-1까지가 작업대상(시작인덱스번호는 1번)
+            varDiv.slice(2,5).css('color','orange');
+            // varDiv.slice(-3,-1).css('color','green');
+            // varDiv.slice(-3).css('color','green');
+
+            $('#content > div:last-child()').css('color', 'brown'); //last와 last-child는 같다.
+        });
+    </script>
+</head>
+<body>
+    <p><br/></p>
+    <div class="container">
+        <div class="card-body" id="content">
+            <h2>slice연습</h2>
+            <div id="a1">Item</div>
+            <div id="a2">Item</div>
+            <div id="a3">Item</div>
+            <div id="a4">Item</div>
+            <div id="a5">Item</div>
+            <div id="a6">Item</div>
+            <div id="a7(-4)">Item</div>
+            <div id="a8(-3)">Item</div>
+            <div id="a9(-2)">Item</div>
+            <div id="a10(-1)">Item</div>
+        </div>
+    </div>
+    <p><br/></p>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test3.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        'use strict';
+        $(document).ready(function(){
+            let str;
+            //콤보상자의 내용을 출력
+            $('#content button[name="foodSearch"]').click(function(){
+                let food = $('#content select[name="foods"] option:selected').val();
+                if(food == '') {
+                    alert("음식분류를 선택하세요");
+                    return;
+                }
+                $('#contResult input[name="result"]').val(food);
+            });
+            
+            //전체선택 버튼 클릭시 텍스트박스와 라디오버튼의 내용출력
+            $('#buttonResult input[name="btnResult"]').click(function(){
+                let name = $('#textContent input[name="name"] ').val();
+                let mid = $('#textContent input[name="mid"] ').val();
+                let pwd = $('#textContent input[name="pwd"] ').val();
+                let traffic = $('#radioContent input[name="traffic"]:checked ').val();
+                if(name == '') {
+                    alert("이름을 입력하세요");
+                    return;
+                }
+                else if(mid == '') {
+                    alert("아이디를 입력하세요");
+                    return;
+                }
+                else if(pwd == '') {
+                    alert("비밀번호를 입력하세요");
+                    return;
+                }
+                else if(traffic == undefined) {
+                    alert("교통수단을 선택하세요");
+                    return;
+                }
+                str = "성명 : "+name+", 아이디 : "+mid+", 비밀번호 : " + pwd +", 교통수단 : " + traffic;
+                $('#contResult input[name="result"]').val(str);
+
+            });
+
+            // 체크박스(배열처리)
+            // jQuery에서 반복문의 처리1 'each문'을 사용..
+            $('#checkContent input[name="lang"]').click(function(){
+                let langAry = [];
+                $('#checkContent input[name="lang"]:checked').each(function(idx, item){
+                    // console.log(idx, item);
+                    // console.log(idx, item.value);
+                    // console.log($(item).val());
+                    langAry.push($(item).val());
+                });
+                // console.log(langAry);
+                // console.log(langAry.join('/'));
+                $('#contResult input[name="result"]').val(langAry.join('/'));
+            });
+
+            //jQuery에서 반복문의 처리2 'map문'을 사용..
+            //map은 넘어온 자료값을 알아서 배열로 담아준다.
+            $('#buttonResult input[name="btnMapResult"]').click(function(){
+                let langMapAry = $('#checkContent input[name="lang"]:checked').map(function(i,item){
+                    // console.log($(item).val());
+                    return $(item).val();
+                })
+                // console.log(langMapAry);
+                .get()      //배열을 읽어오겠다.
+                .join('-'); //읽어올때 기본은 콤마(,)인데 그걸 (-)로 가공처리.
+                console.log(langMapAry);
+                $('#contResult input[name="result"]').val(langMapAry);
+            });
+        });
+    </script>
+</head>
+<body>
+    <p><br/></p>
+    <div class="container">
+        <form name="myForm">
+            <div class="card-body" id="content">
+                <div class="input-group">
+                    <select name="foods" class="custom-select">
+                        <option value="">-- 음식 분류를 선택하세요 --</option>
+                        <option value="한식">1.한식</option>
+                        <option value="중식">2.중식</option>
+                        <option value="양식">3.양식</option>
+                        <option value="일식">4.일식</option>
+                        <option value="분식">5.분식</option>
+                    </select>
+                    <div class="input-group-append">
+                        <button type="button" name="foodSearch" class="btn btn-secondary">조회</button>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div class="card-body" id="textContent">
+                성명 : 
+                <input type="text" name="name" id="name" value="홍길동" class="form-control"/>
+                아이디 : 
+                <input type="text" name="mid" id="mid" value="hkd123" class="form-control"/>
+                비밀번호 : 
+                <input type="password" name="pwd" id="pwd" value="1234513" class="form-control"/>
+            </div>
+            <hr/>
+            <div class="card-body" id="radioContent">
+                등원길 교통수단 : 
+                <input type="radio" name="traffic" value="버스"/>버스 &nbsp;
+                <input type="radio" name="traffic" value="자전거"/>자전거 &nbsp;
+                <input type="radio" name="traffic" value="승용차"/>승용차 &nbsp;
+                <input type="radio" name="traffic" value="기차"/>기차 &nbsp;
+                <input type="radio" name="traffic" value="도보"/>도보
+            </div>
+            <hr/>
+            <div class="card-body" id="checkContent">
+                사용 가능한 컴퓨터 언어 : 
+                <input type="checkbox" name="lang" value="Java"/>Java &nbsp;
+                <input type="checkbox" name="lang" value="JavaScript"/>JavaScript &nbsp;
+                <input type="checkbox" name="lang" value="HTML5"/>HTML5 &nbsp;
+                <input type="checkbox" name="lang" value="jQuery"/>jQuery &nbsp;
+                <input type="checkbox" name="lang" value="Database"/>Database
+            </div>
+            <hr/>
+            <div id="buttonResult">
+                <input type="button" value="전체 결과 출력" name="btnResult" class="btn btn-warning form-control m-2"/> 
+                <input type="button" value="map 결과 출력" name="btnMapResult" class="btn btn-warning form-control m-2"/> 
+            </div>
+            <hr/>
+            <div class="card-body" id="contResult">
+                선택결과 :
+                <input type="text" name="result" value="" disabled class="form-control"/>
+            </div>
+        </form>
+    </div>
+    <p><br/></p>
+</body>
+</html>

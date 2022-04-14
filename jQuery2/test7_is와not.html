@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test7_2.html(is()/not())연습</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    'use strict';
+    $(document).ready(function(){
+      //filter를 이용하여 짝수행에 적용하기
+      $('#content div').css('color','lightgray').filter(function(idx,item){
+        return idx % 2 == 0;
+      }).css('color','orange').filter('.test2').css('fontSize','25pt');
+
+      //is()메소드 활용
+      $('#one div').css('color','lightgray').filter(function(idx,item){
+        return idx % 2 == 0;
+      }).css('color','orange').filter(function(idx,item){
+        return $(item).is('.test2'); //꺼낸 item 요소중에서 class test2의 내용과 같은 자료가 있는가?
+      }).css('fontSize','25pt');
+
+      // not()메소드 활용 : 부정..
+      // $('#two div').css('color','lightgray').not('.test2').css('color','orange'); // 클래스 test2가 아닌것에 적용해라.
+
+      //has() : 배열 요소중에서 지정한 태그를 검색한다.
+      $('#two div').css('color','lightgray').has('span').css('textDecoration','underline');
+    });
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <div class="card-body" id="content">
+    <h2>진달래 꽃</h2>
+    <p>작가 : 김소월</p>
+    <div id="a">1연</div>
+    <div>나보기가 <span class="test">역겨워</span> 가실때에는</div>
+    <div>말없이 고이보내 드리오리다.</div>
+    <div id="a">2연</div>
+    <div>영변에 약산 진달래꽃</div>
+    <div class="test2 main">아름따다 가실길에 뿌리오리다.</div>
+    <div id="a">3연</div>
+    <div id="b">가시는 걸음걸음 놓인 그꽃을</div>
+    <div>사뿐히 <span class="test">즈려밟고</span> 가시옵소서</div>
+    <div id="a">4연</div>
+    <div>나보기가 <span class="main">역겨워</span> 가실때에는</div>
+    <div>말없이 <span class="test">고이보내</span> 드리오리다.</div>
+    <div class="test2">작업끝</div>
+  </div>
+  <hr style="border-color: red;"/>
+  <div class="card-body" id="one">
+    <h2>진달래 꽃</h2>
+    <p>작가 : 김소월</p>
+    <div id="a">1연</div>
+    <div>나보기가 <span class="test">역겨워</span> 가실때에는</div>
+    <div>말없이 고이보내 드리오리다.</div>
+    <div id="a">2연</div>
+    <div>영변에 약산 진달래꽃</div>
+    <div class="test2 main">아름따다 가실길에 뿌리오리다.</div>
+    <div id="a">3연</div>
+    <div id="b">가시는 걸음걸음 놓인 그꽃을</div>
+    <div>사뿐히 <span class="test">즈려밟고</span> 가시옵소서</div>
+    <div id="a">4연</div>
+    <div>나보기가 <span class="main">역겨워</span> 가실때에는</div>
+    <div>말없이 <span class="test">고이보내</span> 드리오리다.</div>
+    <div class="test2">작업끝</div>
+  </div>
+  <hr style="border-color: blue;"/>
+  <div class="card-body" id="two">
+    <h2>진달래 꽃</h2>
+    <p>작가 : 김소월</p>
+    <div id="a">1연</div>
+    <div>나보기가 <span class="test">역겨워</span> 가실때에는</div>
+    <div>말없이 고이보내 드리오리다.</div>
+    <div id="a">2연</div>
+    <div>영변에 약산 진달래꽃</div>
+    <div class="test2 main">아름따다 가실길에 뿌리오리다.</div>
+    <div id="a">3연</div>
+    <div id="b">가시는 걸음걸음 놓인 그꽃을</div>
+    <div>사뿐히 <span class="test">즈려밟고</span> 가시옵소서</div>
+    <div id="a">4연</div>
+    <div>나보기가 <span class="main">역겨워</span> 가실때에는</div>
+    <div>말없이 <span class="test">고이보내</span> 드리오리다.</div>
+    <div class="test2">작업끝</div>
+  </div>
+</div>
+<p><br/></p>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test5.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('div span').css('color', 'orange');
+            // 최초 1개에만 적용.
+            $('div span:first').css('color', 'orange'); 
+
+            // 각각의 그룹의 첫번째 요소만 적용.
+            $('div span:first-child').css({'color': 'white', 'backgroundColor':'red'});
+            
+            //span 자식 요소가 1개인 곳에만.. 적용!(즉 div테그 안에 span태그 하나일때만!)
+            $('div span:only-child').css('textDecoration','underline');
+        });
+    </script>
+</head>
+<body>
+    <p><br/></p>
+    <div class="container">
+        <div class="card-body">
+            <span>1.짜장면</span>
+            <span>2.짬뽕</span>
+            <span>3.탕수육</span>
+            <span>4.볶음밥</span>
+            <span>5.떡볶이</span>
+        </div>
+        <hr/>
+        <div class="card-body">
+            <span>11.짜장면</span>
+            <span>12.짬뽕</span>
+            <span>13.탕수육</span>
+            <span>14.볶음밥</span>
+            <span>15.떡볶이</span>
+        </div>
+        <hr/>
+        <div class="card-body">
+            <span>21.짜장면</span>
+            <span>22.짬뽕</span>
+            <span>23.탕수육</span>
+            <span>24.볶음밥</span>
+            <span>25.떡볶이</span>
+        </div>
+        <hr/>
+        <div class="card-body">
+            <span>31.짜장면</span>
+        </div>
+        <hr/>
+    </div>
+    <p><br/></p>
+</body>
+</html>

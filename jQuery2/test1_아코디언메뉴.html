@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test1.html(아코디언메뉴)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        div.accordion {width: 200px;}
+        div.menu {
+            border: 1px solid gray;
+            text-align: center;
+            background-color: purple;
+            color: white;
+            padding: 4px;
+        }
+        div.content {
+            text-align: center;
+            background-color: yellowgreen;
+            padding: 4px;
+            /* height:200px;  약관동의인 경우 높이로 크기를 줘도 좋다*/
+        }
+        a {
+            color : black;
+        }
+    </style>
+    <script>
+        'use strict';
+        $(document).ready(function(){
+            // $("div.content").hide();
+            $("#acc > .content").hide();
+
+            // $("#acc > #menu1").click(function(){
+            //     $("div#content1").show();
+            // });
+            // $("#acc > .menu").click(function(){ //모든메뉴 한번에 다 보기
+            //     $("div.content").show();
+            // });
+
+            // $("#acc > #menu1").click(function(){
+            //     // $("div.content").show();
+            //     // $("div.menu + div.content").show();
+            //     $("div#menu1 + div.content").show();
+            // });
+            
+            // $("#acc > #menu2").click(function(){
+            //     $("div#menu2 + div.content").show();
+            // });
+
+            $("#acc > .menu").click(function(){
+                // $(this).next().show();
+                // $(this).next().show(300);  //0.3초만에 열려라..
+                // $(this).next().toggle(); //열고, 닫기
+                $(this).next().toggle(300);
+                // $(this).next().slideToggle(); //위에서 아래로 펼쳐짐.
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <p><br/></p>
+    <div class="card-body accordion" id="acc">
+    <h3>아코디언 UI</h3>
+    <div class="menu" id="menu1">메뉴1</div>
+    <div class="content" id="content1">
+        <a href="#">서브메뉴1</a><br/>
+        <a href="#">서브메뉴2</a><br/>
+        <a href="#">서브메뉴3</a><br/>
+        <a href="#">서브메뉴4</a>
+    </div>
+    <div class="menu" id="menu2">메뉴2</div>
+    <div class="content">
+        <a href="#">서브메뉴1</a><br/>
+        <a href="#">서브메뉴2</a>
+    </div>
+    <div class="menu">메뉴3</div>
+    <div class="content">
+        <a href="#">서브메뉴1</a><br/>
+        <a href="#">서브메뉴2</a><br/>
+        <a href="#">서브메뉴3</a>
+    </div>
+    <div class="menu">메뉴4</div>
+    <div class="content">
+        <a href="#">서브메뉴1</a>
+    </div>
+</div>
+<p>
+    이곳은 본문영역입니다.<br/>
+    이곳은 본문영역입니다.<br/>
+    이곳은 본문영역입니다.<br/>
+    이곳은 본문영역입니다.<br/>
+    이곳은 본문영역입니다.<br/>
+    이곳은 본문영역입니다.<br/>
+    이곳은 본문영역입니다.<br/>
+    이곳은 본문영역입니다.<br/>
+    이곳은 본문영역입니다.<br/>
+    이곳은 본문영역입니다.<br/>
+</p>
+<p><br/></p>
+</body>
+</html>

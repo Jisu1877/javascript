@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test6.html(filter()/is()/not())연습</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <div class="card-body" id="content">
+    <h2>진달래 꽃</h2>
+    <p>작가 : 김소월</p>
+    <div id="a">1연</div>
+    <div>나보기가 <span class="test">역겨워</span> 가실때에는</div>
+    <div>말없이 고이보내 드리오리다.</div>
+    <div id="a">2연</div>
+    <div>영변에 약산 진달래꽃</div>
+    <div class="test2 main">아름따다 가실길에 뿌리오리다.</div>
+    <div id="a">3연</div>
+    <div id="b">가시는 걸음걸음 놓인 그꽃을</div>
+    <div>사뿐히 <span class="test">즈려밟고</span> 가시옵소서</div>
+    <div id="a">4연</div>
+    <div>나보기가 <span class="main">역겨워</span> 가실때에는</div>
+    <div>말없이 <span class="test">고이보내</span> 드리오리다.</div>
+    <div class="test2">작업끝</div>
+  </div>
+  <hr style="border-color: red;"/>
+  <div class="card-body" id="one">
+    <h2>진달래 꽃</h2>
+    <p>작가 : 김소월</p>
+    <div id="a">1연</div>
+    <div>나보기가 <span class="test">역겨워</span> 가실때에는</div>
+    <div>말없이 고이보내 드리오리다.</div>
+    <div id="a">2연</div>
+    <div>영변에 약산 진달래꽃</div>
+    <div class="test2 main">아름따다 가실길에 뿌리오리다.</div>
+    <div id="a">3연</div>
+    <div id="b">가시는 걸음걸음 놓인 그꽃을</div>
+    <div>사뿐히 <span class="test">즈려밟고</span> 가시옵소서</div>
+    <div id="a">4연</div>
+    <div>나보기가 <span class="main">역겨워</span> 가실때에는</div>
+    <div>말없이 <span class="test">고이보내</span> 드리오리다.</div>
+    <div class="test2">작업끝</div>
+  </div>
+  <hr style="border-color: blue;"/>
+  <div class="card-body" id="two">
+    <h2>진달래 꽃</h2>
+    <p>작가 : 김소월</p>
+    <div id="a">1연</div>
+    <div>나보기가 <span class="test">역겨워</span> 가실때에는</div>
+    <div>말없이 고이보내 드리오리다.</div>
+    <div id="a">2연</div>
+    <div>영변에 약산 진달래꽃</div>
+    <div class="test2 main">아름따다 가실길에 뿌리오리다.</div>
+    <div id="a">3연</div>
+    <div id="b">가시는 걸음걸음 놓인 그꽃을</div>
+    <div>사뿐히 <span class="test">즈려밟고</span> 가시옵소서</div>
+    <div id="a">4연</div>
+    <div>나보기가 <span class="main">역겨워</span> 가실때에는</div>
+    <div>말없이 <span class="test">고이보내</span> 드리오리다.</div>
+    <div class="test2">작업끝</div>
+  </div>
+</div>
+<p><br/></p>
+</body>
+</html>
